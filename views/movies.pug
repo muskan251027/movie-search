@@ -1,0 +1,18 @@
+extends layout 
+
+block main-content 
+
+    .moviesList 
+        each movie in movies 
+            div(class="movieContainer" id=movie.imdbid)
+                //- 'No image' image used from google
+                .imageContainer 
+                    img(src = movie.imageurl ? (movie.imageurl[0] ? movie.imageurl[0] : "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg") : "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg", alt=`${movie.title} image`)
+                .details 
+                    .title #{movie.title}
+                    .date #{movie.released}
+                .overview 
+                    .heading 
+                        b Overview 
+                    .desc #{movie.synopsis}
+        

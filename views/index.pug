@@ -1,0 +1,20 @@
+extends layout 
+
+block main-content 
+
+    .searchForm 
+        form(method="post", action="/submit")
+            .searchInput 
+                input(type="text", id="movieTitle", name="movieTitle", placeholder="Enter title" required)
+            h2.genreHeading Select your genre
+            .genreList 
+                ul
+                    each genre in genres
+                        li 
+                            input(type="checkbox", id=genre.name, name="genreName", value=genre.name)
+                            label(for=genre.name)
+                                img(src=genre.imgurl)
+                            span.genreName #{genre.name}      
+            .searchButton 
+                button(type="submit") Search Movies
+                        

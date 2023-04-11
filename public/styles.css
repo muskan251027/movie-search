@@ -1,0 +1,327 @@
+/* default settings */
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    /* background: linear-gradient(#110101, #03223b); */
+}
+
+/* Customized scroll bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Set the color and radius of the scroll bar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #009ee4;
+    border-radius: 5px;
+}
+
+/* Set the color of the scroll bar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #110101;
+}
+
+/* page wrapper css */
+.pageWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer CSS */
+#footer {
+    text-align: center;
+    color: #e0e0e0;
+    background-color: #03223b;
+}
+#footer div {
+    border-top: 1.3px solid #e0e0e0;
+    margin: 0 100px;
+    padding: 20px;
+}
+
+/* Header CSS */
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+    text-transform: uppercase;
+    column-gap: 15px;column-gap: 15px;
+    padding: 60px 0;
+    background-color: #110101;
+    flex-wrap: wrap;
+}
+#header .pageTitle {
+    margin: 0;
+    font-size: 45px;
+    font-weight: 600;
+}
+#header .pageTitle span {
+    color: #009ee4;
+}
+#header .pageLogo {
+    height: 60px;
+}
+#header .pageLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Main content CSS */
+#main {
+    flex: 1;
+    padding: 0 100px;
+    background: linear-gradient(#110101, #03223b);
+}
+
+/* Search movies page CSS */
+.searchInput {
+    text-align: center;
+}
+.searchInput input {
+    padding: 15px 160px 15px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+}
+.genreHeading {
+    color: #e0e0e0;
+    text-align: center;
+    font-size: 35px;
+    margin: 0;
+    margin-top: 60px;
+}
+.genreList ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    column-gap: 20px;
+    justify-content: center;
+}
+.genreList ul li {
+    /* display: inline-block; */
+    text-align: center;
+}
+.genreList ul li input[type="checkbox"] {
+    display: none;
+}
+.genreList ul li label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  /* display: flex;
+  flex-direction: column; */
+}
+.genreList ul li label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+.genreList ul li label img {
+  height: 200px;
+  width: 200px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+.genreList ul li span.genreName {
+    color: #e0e0e0;
+    font-style: italic;
+}
+.genreList ul li :checked + label {
+  border-color: #ddd;
+}
+.genreList ul li :checked + label:before {
+  content: "✓";
+  background-color: #027362;
+  transform: scale(2);
+}
+.genreList ul li :checked + label img {
+  /* transform: scale(0.9); */
+  /* box-shadow: 0 0 5px #333; */
+  z-index: -1;
+}
+.searchButton {
+    text-align: center;
+    margin-bottom: 45px;
+    margin-top: 45px;
+}
+.searchButton button {
+    background: #e0e0e0;
+    color: #110101;
+    padding: 15px 100px;
+    font-size: 25px;
+    border: navajowhite;
+    border-radius: 5px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* Movies list CSS */
+.moviesList {
+    display: flex;
+    row-gap: 60px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 60px;
+}
+.movieContainer {
+    width: 21%;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.movieContainer .imageContainer img {
+    width: 100%;
+    height: 100%;
+}
+.movieContainer .details {
+    color: #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 10px;
+    padding: 20px 10px 15px 10px;
+    overflow-wrap: anywhere;
+}
+.movieContainer .details .title {
+    font-size: 18px;
+}
+.movieContainer .details .date {
+    align-self: self-start;
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 8px;
+    color: #d8b000;
+}
+.movieContainer .overview {
+    overflow-wrap: break-word;
+    color: #e0e0e0;
+    font-size: 15px;
+    padding: 10px;
+    position: absolute;
+    bottom: -100px;
+    background: rgb(1 1 1 / 88%);
+    overflow-y: auto;
+    height: 0;
+    transition: bottom 0.5s;
+}
+.movieContainer .overview b{
+    color: #009ee4;
+}
+.movieContainer:hover .overview {
+    bottom: 0px;
+    height: 50%;
+}
+
+
+/* Responsive CSS */
+
+@media only screen and (max-width: 650px) {
+    #main {
+        padding: 0 50px;
+    }
+    #header .pageLogo {
+        height: 45px;
+    }
+    #header .pageTitle {
+        font-size: 35px;
+    }
+    .searchInput input {
+        padding: 10px 25px 10px 11px;
+        font-size: 17px;
+    }
+    .genreHeading {
+        font-size: 25px;
+    }
+    .searchButton button {
+        padding: 10px 35px;
+        font-size: 20px;
+    }
+    #footer div {
+        padding: 15px;
+        font-size: 12px;
+    }
+    .movieContainer {
+        width: 35%;
+    }
+    /* .movieContainer .details .title {
+        font-size: 13px;
+    }
+    .movieContainer .details .date {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .movieContainer .overview {
+        font-size: 13px;
+    }
+    .movieContainer .overview .desc {
+        font-size: 11px;
+    } */
+}
+@media only screen and (max-width: 400px) {
+    #main {
+        padding: 0 30px;
+    }
+    #header {
+        padding: 40px 0;
+    }
+    #header .pageLogo {
+        height: 30px;
+    }
+    #header .pageTitle {
+        font-size: 25px;
+    }
+    .searchInput input {
+        padding: 7px 0px 7px 10px;
+        font-size: 10px;
+        width: 100%;
+    }
+    .genreHeading {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+    .searchButton button {
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+    #footer div {
+        padding: 10px;
+        font-size: 10px;
+    }
+    .movieContainer {
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+block variables 
+doctype html 
+html 
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{title}
+        block scripts 
+            link(rel="stylesheet", type="text/css", href="/styles.css")
+    body
+        .pageWrapper
+            header#header 
+                h1.pageTitle Movie
+                    span Search
+                .pageLogo 
+                    //- Image citation - https://www.shutterstock.com/shutterstock/videos/1095177147/thumb/9.jpg?ip=x480
+                    img(src="/images/logo.webp", alt="Movie Search Logo")  
+            main#main 
+                block main-content 
+            footer#footer
+                div &copy;Copyright, MuskanAggarwal 2023
