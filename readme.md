@@ -1,5 +1,6 @@
 # MOVIE SEARCH PLATFORM
 - A platform to search movies according to title you enter or selecting specified genres if you want.
+- URL - https://allmoviesearch.vercel.app/
 
 ## INSTALLATION
 - Clone repository into your local folder.
